@@ -1,0 +1,45 @@
+body{
+    background-image: url("https://i.onthe.io/0fgjhs621j6piq647.84698778.jpg");
+}
+
+.home{
+    color: #020202;
+    position: fixed;
+    left: 150px;
+    top: 0px;
+}
+
+.sign{
+    color: #000000;
+    position:fixed;
+    right: 150px;
+    top: 0px;
+}
+
+.contants{
+    color: #000000;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    color: #FF0000;
+    position:fixed;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

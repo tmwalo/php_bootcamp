@@ -1,0 +1,106 @@
+<html>
+
+  <head>
+    <title>calc</title>
+    <style>
+      .calc {
+              margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <form action="" method="get" id="calculator">
+      <div class="calc">
+        <input type="text" name="left" id="left">
+      </div>
+      <div class="calc">
+        <select name="operator" id="operator">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="divide">/</option>
+          <option value="modulo">%</option>
+        </select>
+      </div>
+      <div class="calc">
+        <input type="text" name="right" id="right">
+      </div>
+      <div class="calc">
+        <input type="submit" value="Try me!">
+      </div>
+    </form>
+    <script>
+      function handleCalc(e) {
+        var result;
+        var left;
+        var right;
+        var operator;
+
+        e.preventDefault();
+        left = document.getElementById('left').value;
+        right = document.getElementById('right').value;
+        operator = document.getElementById('operator').value;
+
+        if ((!left) || (left == "") || isNaN(left) || (left < 0) || (left % 1 != 0))
+        {
+          alert("Error :(");
+          return ;
+        }
+        if ((!right) || (right == "") || isNaN(right) || (right < 0) || (right % 1 != 0))
+        {
+          alert("Error :(");
+          return ;
+        }
+
+        if (operator == '+')
+        {
+          result = left + right;
+          console.log(result);
+          alert(result);
+        }
+        else if (operator == '-') {
+          result = left - right;
+          console.log(result);
+          alert(result);
+        }
+        else if (operator == '*') {
+          result = left * right;
+          console.log(result);
+          alert(result);
+        }
+        else if (operator == '/') {
+          if (right === 0)
+          {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+            return ;
+          }
+          result = left / right;
+          console.log(result);
+          alert(result);
+        }
+        else if (operator == '%') {
+          if (right === 0)
+          {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+            return ;
+          }
+          result = left % right;
+          console.log(result);
+          alert(result);
+        }
+      }
+
+      var calc = document.getElementById('calculator');
+      if (calc.addEventListener)
+        calc.addEventListener('submit', handleCalc, false);
+      else
+        calc.attachEvent('onsubmit', handleCalc);
+    </script>
+
+  </body>
+
+</html>

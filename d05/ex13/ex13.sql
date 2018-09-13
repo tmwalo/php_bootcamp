@@ -1,0 +1,1 @@
+SELECT ROUND(AVG(nbr_seats)) AS 'average' FROM room;

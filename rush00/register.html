@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>
+			Register
+		</TITLE>
+		<LINK rel="stylesheet" type="text/css" href="style.css" />
+	</HEAD>
+	<BODY>
+		<A href="index.html"></A>
+		<H1 align="center"><font color="red">
+			Welcome to the registration page
+		</font></H1>
+		<DIV ID="Registartion" align="center">
+			<FORM>
+				<DIV>
+    				<LABEL for="username"><font color="red">
+						First Name
+					</font></LABEL>
+    				<INPUT id="first_name" size="30" type="text" />
+    				<LABEL for="name"><font color="red">
+						Last Name
+					</font></LABEL>
+    				<INPUT id="last_name"size="30" type="text" />
+					<!--><BR><!-->
+					<LABEL for="Email Address"><font color="red">
+						Email Address
+					</font></LABEL>
+	    			<INPUT name="email"size="71" type="text" />
+  				</DIV>
+			</FORM>
+			<P ID="TC"><font color="white">
+				By Registering, you agree that you've read and accepted our User
+				<BR>
+				Agreement, you're at least 18 years old, and you consent to our
+				<BR>
+				Privacy Notice and receiving marketing communications from us.
+			</font></P>
+			<BUTTON onclick="validate(document.getElementById('first_name').value,document.getElementById('last_name').value)">
+				register
+			</BUTTON>
+			<SCRIPT>
+				function validate(first_name, last_name){
+					window.alert("Congratulations " + first_name + " your registration was successful")
+				}
+			</SCRIPT>
+		</DIV>
+	</BODY>
+</HTML>

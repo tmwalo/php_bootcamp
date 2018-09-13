@@ -1,0 +1,109 @@
+<html>
+
+  <head>
+    <title>balloon</title>
+    <style>
+      #balloon {
+                  width: 200px;
+                  height: 200px;
+                  background-color: red;
+                  border-radius: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="balloon" class="red"></div>
+    <script>
+
+      function rgbRot(element) {
+        if (element.className === "red") {
+          element.style.backgroundColor = "green";
+          element.className = "green";
+        }
+        else if (element.className === "green") {
+          element.style.backgroundColor = "blue";
+          element.className = "blue";
+        }
+        else if (element.className === "blue") {
+          element.style.backgroundColor = "red";
+          element.className = "red";
+        }
+      }
+
+      function rgbRotRev(element) {
+        if (element.className === "red") {
+          element.style.backgroundColor = "blue";
+          element.className = "blue";
+        }
+        else if (element.className === "green") {
+          element.style.backgroundColor = "red";
+          element.className = "red";
+        }
+        else if (element.className === "blue") {
+          element.style.backgroundColor = "green";
+          element.className = "green";
+        }
+      }
+
+      function growBalloon(element) {
+        var currentSize = element.clientHeight;
+        var newSize = currentSize + 10;
+        if (newSize > 420)
+          newSize = 200;
+        element.style.width = newSize + "px";
+        element.style.height = newSize + "px";
+        element.style.borderRadius = newSize + "px";
+      }
+
+      function shrinkBalloon(element) {
+        var currentSize = element.clientHeight;
+        var newSize = currentSize - 5;
+        if (newSize >= 200)
+        {
+          element.style.width = newSize + "px";
+          element.style.height = newSize + "px";
+          element.style.borderRadius = newSize + "px";
+        }
+      }
+
+      var balloon = document.getElementById('balloon');
+      if (balloon.addEventListener)
+        balloon.addEventListener('click', function() {
+          rgbRot(balloon);
+        }, false);
+      else
+        ballon.attachEvent('onclick', function() {
+          rgbRot(balloon);
+        });
+      if (balloon.addEventListener)
+        balloon.addEventListener('click', function() {
+          growBalloon(balloon);
+        }, false);
+      else
+        ballon.attachEvent('onclick', function() {
+          growBalloon(balloon);
+        });
+      if (balloon.addEventListener)
+        balloon.addEventListener('mouseleave', function() {
+          rgbRotRev(balloon);
+        }, false);
+      else
+        ballon.attachEvent('onmouseleave', function() {
+          rgbRotRev(balloon);
+        });
+      if (balloon.addEventListener)
+        balloon.addEventListener('mouseleave', function() {
+          shrinkBalloon(balloon);
+        }, false);
+      else
+        ballon.attachEvent('onmouseleave', function() {
+          shrinkBalloon(balloon);
+        });
+
+    </script>
+
+  </body>
+
+</html>
